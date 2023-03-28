@@ -14,15 +14,15 @@ let persona = {
     presentacion() {
         let presentacion = "";
         presentacion += `Hola mi nombre y apellido es ${this.nombre} ${this.apellido}<br> Mis hobbies son:<br><ul>`;
-        for (let indice in this.hobbies) {
-            presentacion += `<li>${indice} ${this.hobbies[indice]}</li>`
+        for (let hobbie in this.hobbies) {
+            presentacion += `<li>${hobbie} ${this.hobbies[hobbie]}</li>`
         }
         presentacion += `</ul>`;
         return presentacion;
     },
-    agregarHobbie(hobbieAgregar) {
-        if (isNaN(hobbieAgregar)) {
-            this.hobbies.push(hobbieAgregar);
+    agregarHobbie(hobbieAgregado) {
+        if (isNaN(hobbieAgregado)) {
+            this.hobbies.push(hobbieAgregado);
         } else {
             alert("Debe agregar texto");
         }
