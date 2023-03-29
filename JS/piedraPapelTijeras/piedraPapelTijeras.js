@@ -1,14 +1,18 @@
 let jugamosOtraVez = true;
 
+
 const loQueSale = function () {
+                    // 0         1       2
     let opciones = ["piedra", "papel", "tijera"];
     let aleatorio = Math.floor(Math.random() * opciones.length);
 
     return opciones[aleatorio];
 }
+//loQueSale()
 
 do {
     let eleccionUsuario = +prompt("1:piedra, 2:papel, 3:tijera");
+
     switch (eleccionUsuario) {
         case 1:
             eleccionUsuario = "piedra";
@@ -25,14 +29,23 @@ do {
     }
 
     if (eleccionUsuario === "piedra") {
+
         if (loQueSale() === "papel") {
+
             alert("MAQUINA PAPEL Y TU PIEDRA | PIERDES");
+
         } else if (loQueSale() === "tijera") {
+
             alert("MAQUINA TIJERA Y TU PIEDRA | GANAS");
+
         } else {
+
             alert("MAQUINA PIEDRA Y TU PIEDRA | EMPATE");
+            
         }
+
     } else if (eleccionUsuario === "papel") {
+
         if (loQueSale() === "tijera") {
             alert("MAQUINA TIJERA Y TU PAPEL | PIERDES");
         } else if (loQueSale() === "piedra") {
@@ -40,7 +53,9 @@ do {
         } else {
             alert("MAQUINA PAPEL Y TU PAPEL | EMPATE");
         }
+
     } else {
+
         if (loQueSale() === "piedra") {
             alert("MAQUINA PIEDRA Y TU TIJERAS | PIERDES");
         } else if (loQueSale() === "papel") {
@@ -48,6 +63,7 @@ do {
         } else {
             alert("MAQUINA TIJERAS Y TU TIJERAS | EMPATE");
         }
+
     }
 
     jugamosOtraVez = confirm("Cancelar si quiere salir | Aceptar si quiere jugar de nuevo");
