@@ -36,18 +36,6 @@ form label:first-child{
     margin: 1rem auto;
 }
 
-form label:nth-child(2){
-    border: 2px solid blueviolet;
-    padding: 1rem;
-    width: 90%;
-    margin: 1rem auto;
-}
-form label:nth-child(3){
-    border: 2px solid blueviolet;
-    padding: 1rem;
-    width: 90%;
-    margin: 1rem auto;
-}
 button{
     width: 30%;
     margin: 0 auto;

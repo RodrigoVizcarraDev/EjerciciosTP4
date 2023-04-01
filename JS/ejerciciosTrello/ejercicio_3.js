@@ -63,24 +63,124 @@ let listaProductos = [
     },
     { nombreProducto: "Agua micellar", precio: 2890, categoria: "Limpieza" },
 ];
-const inputUsuario = document.getElementById("buscarProducto");
-const valorUsuario = inputUsuario.value;
-console.log(valorUsuario);
+
 // El método "Object.entries()" devuelve una matriz bidimensional de un objeto, donde cada elemento de la matriz es un arreglo que contiene la clave y el valor de cada propiedad del objeto. Podemos usar Object.entries para convertir el objeto en un array matriz [[],[],[]]
 
-listaProductos.forEach(elemento => {
-    elemento.nombreProducto.includes("Protector") ? console.log(elemento) : null;
-});
+const funcionTablaProductos = function (listaProductos) {
+    let eleccionUsuario = +prompt(`
+    1: Mostrar tabla completa,
+    2: Buscar "Protectores solares",
+    3: Buscar "serum" y enseñarlo en pantalla,
+    4: Buscar un producto "Bruma"`
+    );
 
-const funcionTablaProductos = function(listaProductos){
     let tabla = `<table>`;
-    for(producto in listaProductos){
-        tabla+=`<tr>`
-        tabla+=`Producto`;
-        tabla+=`Categoria`;
-        tabla+=`Precio`;
-        tabla+=`</tr>`;
+    tabla += `<tr>`
+    tabla += `<th>`
+    tabla += `Producto`
+    tabla += `</th>`
+    tabla += `<th>`
+    tabla += `Categoria`;
+    tabla += `</th>`;
+    tabla += `<th>`;
+    tabla += `Precio`;
+    tabla += `</th>`;
 
-        
+    switch (eleccionUsuario) {
+        case 1:
+
+            listaProductos.forEach((elemento) => {
+                tabla += `<tr>`
+                tabla += `<td>`
+                tabla += `${elemento.nombreProducto}`
+                tabla += `</td>`
+
+                tabla += `<td>`
+                tabla += `${elemento.precio}`
+                tabla += `</td>`
+
+                tabla += `<td>`
+                tabla += `${elemento.categoria}`
+                tabla += `</td>`
+
+                tabla += `</tr>`
+                
+            });
+            document.write(tabla);
+            break;
+        case 2:
+            listaProductos.forEach((producto)=>{
+                if(producto.nombreProducto.includes("Protector solar")){
+                    tabla+=`<tr>`;
+    
+                    tabla+=`<td>`;
+                    tabla+=`${producto.nombreProducto}`;
+                    tabla+=`</td>`;
+    
+                    tabla+=`<td>`;
+                    tabla+=`${producto.precio}`;
+                    tabla+=`</td>`;
+    
+                    tabla+=`<td>`;
+                    tabla+=`${producto.categoria}`;
+                    tabla+=`</td>`;
+                    
+                    tabla+=`</tr>`;
+                };
+                
+            });
+            document.write(tabla);
+            break;
+        case 3:
+            listaProductos.forEach((producto)=>{
+                if(producto.nombreProducto.includes("Sérum")){
+                    tabla+=`<tr>`;
+    
+                    tabla+=`<td>`;
+                    tabla+=`${producto.nombreProducto}`;
+                    tabla+=`</td>`;
+    
+                    tabla+=`<td>`;
+                    tabla+=`${producto.precio}`;
+                    tabla+=`</td>`;
+    
+                    tabla+=`<td>`;
+                    tabla+=`${producto.categoria}`;
+                    tabla+=`</td>`;
+                    
+                    tabla+=`</tr>`;
+                };
+                
+            });
+            document.write(tabla);
+            break;
+        case 4:
+            for(let producto of listaProductos){
+                if(producto.nombreProducto.includes("Bruma")){
+                    tabla+=`<tr>`;
+    
+                    tabla+=`<td>`;
+                    tabla+=`${producto.nombreProducto}`;
+                    tabla+=`</td>`;
+    
+                    tabla+=`<td>`;
+                    tabla+=`${producto.precio}`;
+                    tabla+=`</td>`;
+    
+                    tabla+=`<td>`;
+                    tabla+=`${producto.categoria}`;
+                    tabla+=`</td>`;
+                    
+                    tabla+=`</tr>`;
+                }else{
+                    document.write(`<h1>No existe bruma en la lista de productos</h1>`);
+                    break;
+                }
+            }
+            
+            document.write(tabla);
+            break;
+
     }
 }
+funcionTablaProductos(listaProductos);
