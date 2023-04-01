@@ -63,17 +63,24 @@ let listaProductos = [
     },
     { nombreProducto: "Agua micellar", precio: 2890, categoria: "Limpieza" },
 ];
-
+const inputUsuario = document.getElementById("buscarProducto");
+const valorUsuario = inputUsuario.value;
+console.log(valorUsuario);
 // El método "Object.entries()" devuelve una matriz bidimensional de un objeto, donde cada elemento de la matriz es un arreglo que contiene la clave y el valor de cada propiedad del objeto. Podemos usar Object.entries para convertir el objeto en un array matriz [[],[],[]]
-let listaProductosArray = [];
 
-listaProductos.forEach(objeto => {
-    listaProductosArray.push(Object.entries(objeto));
+listaProductos.forEach(elemento => {
+    elemento.nombreProducto.includes("Protector") ? console.log(elemento) : null;
 });
 
-let protectoresSolares = listaProductosArray.filter((producto)=>{
-    
-    return producto.find(clave => clave[0] === "nombreProducto")[1].includes("Protector"); 
-})
+const funcionTablaProductos = function(listaProductos){
+    let tabla = `<table>`;
+    for(producto in listaProductos){
+        tabla+=`<tr>`
+        tabla+=`Producto`;
+        tabla+=`Categoria`;
+        tabla+=`Precio`;
+        tabla+=`</tr>`;
 
-console.log(protectoresSolares);
+        
+    }
+}

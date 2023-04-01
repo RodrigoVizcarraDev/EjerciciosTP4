@@ -2,8 +2,8 @@ const auto = {
     color: "Rojo",
     marca: "Renault",
     modelo: "Kangoo",
-    encender: function(){console.log("Auto encendido")},
-    apagar: function(){console.log("Auto apagado")}
+    encender: function(){document.write("Auto encendido")},
+    apagar: function(){document.write("Auto apagado")}
 }
 
 auto.encender();

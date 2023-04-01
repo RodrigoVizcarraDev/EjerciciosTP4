@@ -6,10 +6,10 @@ const cuenta = {
     },
     extraer: function (saldoExtraido) {
         if (this.saldo <= 0) {
-            console.log(`Su saldo ${this.saldo} es insuficiente`);
+            document.write(`Su saldo ${this.saldo} es insuficiente`);
         } else {
             if (this.saldo < saldoExtraido) {
-                console.log(`Su saldo ${this.saldo} es menor a la cantidad que intenta extraer`);
+                document.write(`Su saldo ${this.saldo} es menor a la cantidad que intenta extraer`);
             } else {
                 this.saldo -= saldoExtraido;
             }

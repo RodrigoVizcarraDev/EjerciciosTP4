@@ -35,6 +35,6 @@ let fideos = new Producto("Fideos Luchetti", 180, "AB109");
 
 let arrayOfProducts = [lecheEntera,cereales,fideos];
 
-for(let contador = 0; contador < arrayOfProducts.length; contador++ ){
-    arrayOfProducts[contador].imprimeDatos();
+for(objeto in arrayOfProducts){
+    arrayOfProducts[objeto].imprimeDatos();
 }
