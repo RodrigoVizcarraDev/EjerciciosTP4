@@ -104,7 +104,8 @@ class AgendaContactos {
         this.#agenda.forEach((contacto,indice) =>{
             agenda += `
         ||Contacto posicion ${indice+1}: 
-        ||${contacto.nombre} ${contacto.numTelefono}`
+        ||Nombre: ${contacto.nombre} 
+        ||Telefono: ${contacto.numTelefono}`
         });
         alert(agenda);
     }
@@ -123,6 +124,7 @@ class AgendaContactos {
             }
         }
         alert(`Tiene espacio para ${capacidadDeAgenda} contactos`);
+        
     }
 }
 
